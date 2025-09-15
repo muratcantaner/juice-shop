@@ -24,6 +24,12 @@ jobs:
           image: "juice-shop:${{ github.sha }}"
           output-file: "sbom.spdx.json"
           format: "spdx-json"
+      - name: Upload SBOM
+        uses: actions/upload-artifact@v4
+        with:
+          name: sbom
+          path: sbom.spdx.json
+
 
   # 2) SAST (Semgrep) Job
   Sast-scan:
