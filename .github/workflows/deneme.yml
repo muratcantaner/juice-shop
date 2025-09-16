@@ -17,6 +17,7 @@ jobs:
       - name: Build Docker image
         run: |
           docker build -t juice-shop:${{ github.sha }} .
+        #devops kısmı buraya kadardı, burdan sonrası devsecops
 
       - name: Syft SBOM Scan
         uses: anchore/sbom-action@v0
